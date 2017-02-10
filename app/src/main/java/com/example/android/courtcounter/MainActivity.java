@@ -11,6 +11,8 @@ import static com.example.android.courtcounter.R.id.team_b_score;
 public class MainActivity extends AppCompatActivity {
 int scoreTeamA = 0;
 int scoreTeamB = 0;
+private static final String state_scoreTeamA = "stateOfScoreTeamA";
+private static final String state_scoreTeamB = "stateOfScoreTeamB";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,24 @@ int scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putInt(state_scoreTeamA, scoreTeamA);
+        savedInstanceState.putInt(state_scoreTeamB, scoreTeamB);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+
+        scoreTeamA = savedInstanceState.getInt(state_scoreTeamA);
+        scoreTeamB = savedInstanceState.getInt(state_scoreTeamB);
+
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+    }
+
     /**
      * Displays the given score for Team A.
      */
