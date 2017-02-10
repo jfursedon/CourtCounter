@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    style="@style/parentRelative"
+    tools:context="com.example.android.courtcounter.MainActivity">
+
+    <LinearLayout
+        style="@style/teamGroupLinear">
+
+        <LinearLayout
+            style="@style/teamLinear">
+
+            <TextView
+                style="@style/teamName"
+                android:text="@string/teamA" />
+
+            <TextView
+                android:id="@+id/team_a_score"
+                style="@style/teamScore"
+                 />
+
+            <Button
+                style="@style/scoreButton"
+                android:onClick="aPlusThree"
+                android:text="@string/plusThree"/>
+            <Button
+                style="@style/scoreButton"
+                android:onClick="aPlusTwo"
+                android:text="@string/plusTwo"/>
+            <Button
+                style="@style/scoreButton"
+                android:onClick="aPlusOne"
+                android:text="@string/freeThrow"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/verticalLine"/>
+
+        <LinearLayout
+            style="@style/teamLinear">
+
+            <TextView
+                style="@style/teamName"
+                android:text="@string/teamB" />
+
+            <TextView
+                android:id="@+id/team_b_score"
+                style="@style/teamScore" />
+
+            <Button
+                style="@style/scoreButton"
+                android:onClick="bPlusThree"
+                android:text="@string/plusThree"/>
+            <Button
+                style="@style/scoreButton"
+                android:onClick="bPlusTwo"
+                android:text="@string/plusTwo"/>
+            <Button
+                style="@style/scoreButton"
+                android:onClick="bPlusOne"
+                android:text="@string/freeThrow"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        style="@style/resetButton"
+        android:onClick="reset"
+        android:id="@+id/button" />
+
+</RelativeLayout>
