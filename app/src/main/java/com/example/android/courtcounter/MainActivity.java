@@ -27,7 +27,7 @@ int scoreTeamB = 0;
         scoreView.setText(String.valueOf(score));
     }
     /**
-     * Displays the given score for Team B.
+     * Displays the given score for Team B. 
      */
     public void displayForTeamB(int score) {
         TextView scoreView = (TextView) findViewById(team_b_score);
