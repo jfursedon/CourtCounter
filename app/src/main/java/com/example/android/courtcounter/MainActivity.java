@@ -14,6 +14,11 @@ int scoreTeamB = 0;
 private static final String state_scoreTeamA = "stateOfScoreTeamA";
 private static final String state_scoreTeamB = "stateOfScoreTeamB";
 
+
+    /**
+     * When the app is opened or the orientation is changed display scores
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +27,18 @@ private static final String state_scoreTeamB = "stateOfScoreTeamB";
         displayForTeamB(scoreTeamB);
     }
 
+    /**
+     * Save scores when the activity begins to stop.
+     */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
         savedInstanceState.putInt(state_scoreTeamA, scoreTeamA);
         savedInstanceState.putInt(state_scoreTeamB, scoreTeamB);
     }
+
+    /**
+     * Restore scores from saved state and display
+     */
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState){
@@ -86,6 +98,10 @@ private static final String state_scoreTeamB = "stateOfScoreTeamB";
             displayForTeamB(scoreTeamB);
         }
     }
+
+    /**
+     * Reset scores when reset button is clicked.
+     */
     public void reset(View v){
         scoreTeamA = 0;
         scoreTeamB = 0;
