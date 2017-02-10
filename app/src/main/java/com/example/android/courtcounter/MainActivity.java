@@ -87,16 +87,19 @@ private static final String state_scoreTeamB = "stateOfScoreTeamB";
     public void bPlusOne(View v){
         changeScore(1, "B");
     }
-    public void changeScore(int change, String team){
+    public void changeScore(int change, String  team){
 
-        if(team == "A"){
-            scoreTeamA += change;
-            displayForTeamA(scoreTeamA);
+        switch(team){
+            case "A":
+                scoreTeamA += change;
+                displayForTeamA(scoreTeamA);
+                break;
+            case "B":
+                scoreTeamB += change;
+                displayForTeamB(scoreTeamB);
+                break;
         }
-        else if(team == "B") {
-            scoreTeamB += change;
-            displayForTeamB(scoreTeamB);
-        }
+
     }
 
     /**
